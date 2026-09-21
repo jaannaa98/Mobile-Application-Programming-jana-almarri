@@ -7,16 +7,18 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
@@ -59,46 +61,46 @@ fun CourseListScreen(modifier: Modifier = Modifier) {
     val courses = remember {
         listOf(
             Course(
-                "CSC 402",
-                "Mobile Application Programming",
-                3,
-                "Mon / Wed"
+                code = "CSC 402",
+                title = "Mobile Application Programming",
+                credits = 3,
+                days = "Mon / Wed"
             ),
             Course(
-                "CSC 311",
-                "Database Systems",
-                4,
-                "Sun / Tue"
+                code = "CSC 311",
+                title = "Database Systems",
+                credits = 4,
+                days = "Sun / Tue"
             ),
             Course(
-                "CSC 340",
-                "Operating Systems",
-                3,
-                "Mon / Wed"
+                code = "CSC 340",
+                title = "Operating Systems",
+                credits = 3,
+                days = "Mon / Wed"
             ),
             Course(
-                "MATH 202",
-                "Discrete Mathematics",
-                3,
-                "Sun / Thu"
+                code = "MATH 202",
+                title = "Discrete Mathematics",
+                credits = 3,
+                days = "Sun / Thu"
             ),
             Course(
-                "ENG 214",
-                "Technical Writing",
-                2,
-                "Tue"
+                code = "ENG 214",
+                title = "Technical Writing",
+                credits = 2,
+                days = "Tue"
             ),
             Course(
-                "PHYS 105",
-                "General Physics II",
-                4,
-                "Sun / Thu"
+                code = "PHYS 105",
+                title = "General Physics II",
+                credits = 4,
+                days = "Sun / Thu"
             ),
             Course(
-                "ISLM 101",
-                "Islamic Culture",
-                2,
-                "Tue"
+                code = "ISLM 101",
+                title = "Islamic Culture",
+                credits = 2,
+                days = "Tue"
             )
         )
     }
@@ -158,7 +160,9 @@ fun CourseRow(course: Course) {
     ) {
 
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(IntrinsicSize.Min),
             verticalAlignment = Alignment.CenterVertically
         ) {
 
